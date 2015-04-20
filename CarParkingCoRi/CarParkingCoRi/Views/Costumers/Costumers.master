@@ -1,0 +1,13 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/Views/Intern.master" AutoEventWireup="true" CodeBehind="Costumers.master.cs" Inherits="CarParkingCoRi.Views.Costumers.Costumers" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="HeaderIntern" runat="server">
+    <asp:ContentPlaceHolder runat="server" ID="HeaderInterns" />
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="MainIntern" runat="server">
+    <asp:ContentPlaceHolder runat="server" ID="MainInterns" />
+</asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="FooterInternTop" runat="server">
+    <asp:ContentPlaceHolder runat="server" ID="FooterInternTops" />
+</asp:Content>
+<asp:Content ID="Content4" ContentPlaceHolderID="FooterInternBottom" runat="server">
+    <asp:ContentPlaceHolder runat="server" ID="FooterInternBottoms" />
+</asp:Content>
