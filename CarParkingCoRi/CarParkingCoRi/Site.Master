@@ -1,0 +1,62 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="CarParkingCoRi.SiteMaster" %>
+
+<!DOCTYPE html>
+<html lang="es">
+<head runat="server">
+    <!-- start: Meta -->
+    <meta charset="utf-8" />
+    <title><%: Page.Title %> - CoRi Car Parking System</title>
+    <meta name="description" content="CoRi Car Parking System">
+    <meta name="author" content="Andres Lizano">
+    <meta name="author" content="Oscar">
+    <meta name="author" content="Alberto Castro">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <!-- end: Meta -->
+
+    <!-- start: Mobile Specific -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- end: Mobile Specific -->
+
+    <!-- start: CSS -->
+    <link id="bootstrapStyle" href="Content/css/bootstrap.min.css" rel="stylesheet">
+    <link href="Content/css/bootstrap-responsive.min.css" rel="stylesheet">
+    <link id="baseStyle" href="Content/css/style.css" rel="stylesheet">
+    <link id="baseStyleResponsive" href="Content/css/style-responsive.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&subset=latin,cyrillic-ext,latin-ext' rel='stylesheet' type='text/css'>
+    <!-- end: CSS -->
+
+    <!-- The HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+	  	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<link id="ieStyle" href="Content/css/ie.css" rel="stylesheet">
+	<![endif]-->
+
+    <!--[if IE 9]>
+		<link id="ie9style" href="Content/css/ie9.css" rel="stylesheet">
+	<![endif]-->
+
+    <!-- start: Favicon -->
+    <link rel="shortcut icon" href="Content/img/favicon.ico" type="image/x-icon" />
+    <!-- end: Favicon -->
+    <asp:PlaceHolder runat="server">
+        <script src="<%: ResolveUrl("~/Scripts/modernizr-2.5.3.js") %>"></script>
+    </asp:PlaceHolder>
+    <asp:ContentPlaceHolder runat="server" ID="HeadContent" />
+</head>
+<body>
+    <form runat="server">
+        <asp:ScriptManager runat="server">
+            <Scripts>
+                <asp:ScriptReference Name="jquery" />
+                <asp:ScriptReference Name="jquery.ui.combined" />
+            </Scripts>
+        </asp:ScriptManager>
+        <asp:ContentPlaceHolder runat="server" ID="Header" />
+        <div id="body">
+            <asp:ContentPlaceHolder runat="server" ID="Main" />
+        </div>
+    </form>
+    <asp:ContentPlaceHolder runat="server" ID="Footer" />
+
+</body>
+</html>

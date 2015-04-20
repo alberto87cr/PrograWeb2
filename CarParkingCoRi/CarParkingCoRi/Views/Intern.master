@@ -1,0 +1,351 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Intern.master.cs" Inherits="CarParkingCoRi.Views.Intern" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
+    <% loadRootPath(); %>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="Header" runat="server">
+    <header>
+        <!-- start: Header -->
+        <div class="navbar">
+            <div class="navbar-inner">
+                <div class="container-fluid">
+                    <a class="btn btn-navbar" data-toggle="collapse" data-target=".top-nav.nav-collapse,.sidebar-nav.nav-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </a>
+                    <a class="brand" href="index.html"><span>CoRi Car Parking System</span></a>
+
+                    <!-- start: Header Menu -->
+                    <div class="nav-no-collapse header-nav">
+                        <ul class="nav pull-right">
+                            <li class="dropdown hidden-phone">
+                                <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+                                    <i class="halflings-icon white warning-sign"></i>
+                                </a>
+                                <ul class="dropdown-menu notifications">
+                                    <li class="dropdown-menu-title">
+                                        <span>No tiene Notificaciones</span>
+                                        <a href="#refresh"><i class="icon-repeat"></i></a>
+                                    </li>
+                                    <%--<li>
+                                        <a href="#">
+                                            <span class="icon blue"><i class="icon-user"></i></span>
+                                            <span class="message"></span>
+                                            <span class="time"></span>
+                                        </a>
+                                    </li>
+                                    <li class="dropdown-menu-sub-footer">
+                                        <a>Ver todas las notificaciones</a>
+                                    </li>--%>
+                                </ul>
+                            </li>
+                            <!-- start: Notifications Dropdown -->
+                            <li class="dropdown hidden-phone">
+                                <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+                                    <i class="halflings-icon white tasks"></i>
+                                </a>
+                                <ul class="dropdown-menu tasks">
+                                    <li class="dropdown-menu-title">
+                                        <span>Detalle de Parqueo</span>
+                                        <a href="#refresh"><i class="icon-repeat"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <span class="header">
+                                                <span class="title">Porcentaje General en Uso</span>
+                                                <span class="percent"></span>
+                                            </span>
+                                            <div class="taskProgress progressSlim red">80</div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <span class="header">
+                                                <span class="title">Porcentaje Reservado en Uso</span>
+                                                <span class="percent"></span>
+                                            </span>
+                                            <div class="taskProgress progressSlim green">20</div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <span class="header">
+                                                <span class="title">Porcentaje Publico en Uso</span>
+                                                <span class="percent"></span>
+                                            </span>
+                                            <div class="taskProgress progressSlim yellow">60</div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <!-- end: Notifications Dropdown -->
+                            <!-- start: Message Dropdown -->
+                            <li class="dropdown hidden-phone">
+                                <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+                                    <i class="halflings-icon white envelope"></i>
+                                </a>
+                                <ul class="dropdown-menu messages">
+                                    <li class="dropdown-menu-title">
+                                        <span>Usted tiene 1 mensaje nuevo</span>
+                                        <a href="#refresh"><i class="icon-repeat"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <span class="avatar">
+                                                <img src="<% Response.Write(rootPath());%>Content/img/avatar.jpg" alt="Avatar"></span>
+                                            <span class="header">
+                                                <span class="from">Administracion
+                                                </span>
+                                                <span class="time">6 min
+                                                </span>
+                                            </span>
+                                            <span class="message">Reportar cierre de caja de ayer
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-menu-sub-footer">Ver todos los mensajes</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <!-- end: Message Dropdown -->
+                            <li>
+                                <a class="btn" href="#">
+                                    <i class="halflings-icon white wrench"></i>
+                                </a>
+                            </li>
+                            <!-- start: User Dropdown -->
+                            <li class="dropdown">
+                                <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+                                    <i class="halflings-icon white user"></i>Alberto Castro
+								    <span class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li class="dropdown-menu-title">
+                                        <span>Configuracion</span>
+                                    </li>
+                                    <li><a href="#"><i class="halflings-icon user"></i>Perfil</a></li>
+                                    <li><a href="login.html"><i class="halflings-icon off"></i>Cerrar Seccion</a></li>
+                                </ul>
+                            </li>
+                            <!-- end: User Dropdown -->
+                        </ul>
+                    </div>
+                    <!-- end: Header Menu -->
+                </div>
+            </div>
+        </div>
+        <!-- start: Header -->
+
+        <%--<asp:ContentPlaceHolder runat="server" ID="HeadIntern" />--%>
+    </header>
+    <asp:ContentPlaceHolder runat="server" ID="HeaderIntern" />
+</asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="Main" runat="server">
+    <div class="container-fluid-full">
+        <div class="row-fluid">
+            <!-- start: Main Menu -->
+            <div id="sidebar-left" class="span2">
+                <div class="nav-collapse sidebar-nav">
+                    <ul class="nav nav-tabs nav-stacked main-menu">
+                        <!-- start: Home Option -->
+                        <li>
+                            <a href="<% Response.Write(HomePath() + IndexPath());%>">
+                                <i class="icon-bar-chart"></i>
+                                <span class="hidden-tablet">Inicio</span>
+                            </a>
+                        </li>
+                        <!-- end: Home Option -->
+                        <!-- start: Vehicles Options -->
+                        <li>
+                            <a class="dropmenu" href="#">
+                                <i class="icon-dashboard"></i>
+                                <span class="hidden-tablet">Control de Vehiculos</span>
+                            </a>
+                            <ul>
+                                <li>
+                                    <a class="submenu" href="<% Response.Write(VehiclesPath() + ListPath());%>">
+                                        <i class="icon-list-alt"></i>
+                                        <span class="hidden-tablet">Lista Actual</span>
+                                    </a>
+                                    <a class="submenu" href="<% Response.Write(VehiclesPath() + AddPath());%>">
+                                        <i class="icon-arrow-right"></i>
+                                        <span class="hidden-tablet">Ingreso de Vehiculo</span>
+                                    </a>
+                                    <a class="submenu" href="<% Response.Write(VehiclesPath() + DeletePath());%>">
+                                        <i class="icon-arrow-left"></i>
+                                        <span class="hidden-tablet">Salida de Vehiculo</span>
+                                    </a>
+                                    <a class="submenu" href="<% Response.Write(VehiclesPath() + UpdatePath());%>">
+                                        <i class="icon-edit"></i>
+                                        <span class="hidden-tablet">Modificar Vehiculo</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <!-- end: Vehicles Options -->
+                        <!-- start: Customers Options -->
+                        <li>
+                            <a class="dropmenu" href="#">
+                                <i class="icon-user"></i>
+                                <span class="hidden-tablet">Clientes</span>
+                            </a>
+                            <ul>
+                                <li>
+                                    <a class="submenu" href="<% Response.Write(CustomersPath() + ListPath());%>">
+                                        <i class="icon-list-alt"></i>
+                                        <span class="hidden-tablet">Listado</span>
+                                    </a>
+                                    <a class="submenu" href="<% Response.Write(CustomersPath() + AddPath());%>">
+                                        <i class="icon-pencil"></i>
+                                        <span class="hidden-tablet">Agregar</span>
+                                    </a>
+                                    <a class="submenu" href="<% Response.Write(CustomersPath() + DeletePath());%>">
+                                        <i class="icon-trash"></i>
+                                        <span class="hidden-tablet">Borrar</span>
+                                    </a>
+                                    <a class="submenu" href="<% Response.Write(CustomersPath() + UpdatePath());%>">
+                                        <i class="icon-edit"></i>
+                                        <span class="hidden-tablet">Actualizar</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <!-- end: Customers Options -->
+                        <!-- start: Users Option -->
+                        <li>
+                            <a class="dropmenu" href="#">
+                                <i class="icon-group"></i>
+                                <span class="hidden-tablet">Control de Usuarios</span>
+                            </a>
+                            <ul>
+                                <li>
+                                    <a class="submenu" href="<% Response.Write(UsersPath() + ListPath());%>">
+                                        <i class="icon-list-alt"></i>
+                                        <span class="hidden-tablet">Listado</span>
+                                    </a>
+                                    <a class="submenu" href="<% Response.Write(UsersPath() + AddPath());%>">
+                                        <i class="icon-pencil"></i>
+                                        <span class="hidden-tablet">Agregar</span>
+                                    </a>
+                                    <a class="submenu" href="<% Response.Write(UsersPath() + DeletePath());%>">
+                                        <i class="icon-trash"></i>
+                                        <span class="hidden-tablet">Borrar</span>
+                                    </a>
+                                    <a class="submenu" href="<% Response.Write(UsersPath() + UpdatePath());%>">
+                                        <i class="icon-edit"></i>
+                                        <span class="hidden-tablet">Actualizar</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <!-- end: Users Option -->
+                        <!-- start: Config Options -->
+                        <li>
+                            <a class="dropmenu" href="#">
+                                <i class="icon-wrench"></i>
+                                <span class="hidden-tablet">Ajustes de Sistema</span>
+                            </a>
+                            <ul>
+                                <li>
+                                    <a class="submenu" href="<% Response.Write(UsersPath() + ListPath());%>">
+                                        <i class="icon-list-alt"></i>
+                                        <span class="hidden-tablet">Parametros</span>
+                                    </a>
+                                    <a class="submenu" href="<% Response.Write(UsersPath() + AddPath());%>">
+                                        <i class="icon-money"></i>
+                                        <span class="hidden-tablet">Cierre de Caja</span>
+                                    </a>
+                                    <a class="submenu" href="<% Response.Write(UsersPath() + DeletePath());%>">
+                                        <i class="icon-bell"></i>
+                                        <span class="hidden-archive">Cambio de Turno</span>
+                                    </a>
+                                    <a class="submenu" href="<% Response.Write(UsersPath() + UpdatePath());%>">
+                                        <i class="icon-road"></i>
+                                        <span class="hidden-tablet">Datos de los espacios</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <!-- end: Config Options -->
+                        <!-- start: Login Options -->
+                        <li>
+                            <a href="login.html">
+                                <i class="icon-lock"></i>
+                                <span class="hidden-tablet">Cerrar Session</span>
+                            </a>
+                        </li>
+                        <!-- end: Login Options -->
+                    </ul>
+                </div>
+            </div>
+            <!-- end: Main Menu -->
+
+            <noscript>
+                <div class="alert alert-block span10">
+                    <h4 class="alert-heading">Warning!</h4>
+                    <p>You need to have <a href="http://en.wikipedia.org/wiki/JavaScript" target="_blank">JavaScript</a> enabled to use this site.</p>
+                </div>
+            </noscript>
+            <asp:ContentPlaceHolder runat="server" ID="MainIntern" />
+
+        </div>
+    </div>
+    <div class="modal hide fade" id="myModal">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">×</button>
+            <h3>Settings</h3>
+        </div>
+        <div class="modal-body">
+            <p>Here settings can be configured...</p>
+        </div>
+        <div class="modal-footer">
+            <a href="#" class="btn" data-dismiss="modal">Close</a>
+            <a href="#" class="btn btn-primary">Save changes</a>
+        </div>
+    </div>
+
+    <div class="clearfix"></div>
+</asp:Content>
+<asp:Content ID="Content4" ContentPlaceHolderID="Footer" runat="server">
+    <footer>
+        <asp:ContentPlaceHolder runat="server" ID="FooterInternTop" />
+        <p>
+            <span style="text-align: left; float: left">&copy; 2015 <a href="http://paw.conquistech.com/" title="Sitio Principal">CoRi Car Parking System</a></span>
+        </p>
+        <asp:ContentPlaceHolder runat="server" ID="FooterInternBottom" />
+    </footer>
+    <!-- start: JavaScript-->
+    <script src="<% Response.Write(rootPath());%>Content/js/jquery-1.9.1.min.js"></script>
+    <script src="<% Response.Write(rootPath());%>Content/js/jquery-migrate-1.0.0.min.js"></script>
+    <script src="<% Response.Write(rootPath());%>Content/js/jquery-ui-1.10.0.custom.min.js"></script>
+    <script src="<% Response.Write(rootPath());%>Content/js/jquery.ui.touch-punch.js"></script>
+    <script src="<% Response.Write(rootPath());%>Content/js/modernizr.js"></script>
+    <script src="<% Response.Write(rootPath());%>Content/js/bootstrap.min.js"></script>
+    <script src="<% Response.Write(rootPath());%>Content/js/jquery.cookie.js"></script>
+    <script src='<% Response.Write(rootPath());%>Content/js/fullcalendar.min.js'></script>
+    <script src='<% Response.Write(rootPath());%>Content/js/jquery.dataTables.min.js'></script>
+    <script src="<% Response.Write(rootPath());%>Content/js/excanvas.js"></script>
+    <script src="<% Response.Write(rootPath());%>Content/js/jquery.flot.js"></script>
+    <script src="<% Response.Write(rootPath());%>Content/js/jquery.flot.pie.js"></script>
+    <script src="<% Response.Write(rootPath());%>Content/js/jquery.flot.stack.js"></script>
+    <script src="<% Response.Write(rootPath());%>Content/js/jquery.flot.resize.min.js"></script>
+    <script src="<% Response.Write(rootPath());%>Content/js/jquery.chosen.min.js"></script>
+    <script src="<% Response.Write(rootPath());%>Content/js/jquery.uniform.min.js"></script>
+    <script src="<% Response.Write(rootPath());%>Content/js/jquery.cleditor.min.js"></script>
+    <script src="<% Response.Write(rootPath());%>Content/js/jquery.noty.js"></script>
+    <script src="<% Response.Write(rootPath());%>Content/js/jquery.elfinder.min.js"></script>
+    <script src="<% Response.Write(rootPath());%>Content/js/jquery.raty.min.js"></script>
+    <script src="<% Response.Write(rootPath());%>Content/js/jquery.iphone.toggle.js"></script>
+    <script src="<% Response.Write(rootPath());%>Content/js/jquery.uploadify-3.1.min.js"></script>
+    <script src="<% Response.Write(rootPath());%>Content/js/jquery.gritter.min.js"></script>
+    <script src="<% Response.Write(rootPath());%>Content/js/jquery.imagesloaded.js"></script>
+    <script src="<% Response.Write(rootPath());%>Content/js/jquery.masonry.min.js"></script>
+    <script src="<% Response.Write(rootPath());%>Content/js/jquery.knob.modified.js"></script>
+    <script src="<% Response.Write(rootPath());%>Content/js/jquery.sparkline.min.js"></script>
+    <script src="<% Response.Write(rootPath());%>Content/js/counter.js"></script>
+    <script src="<% Response.Write(rootPath());%>Content/js/retina.js"></script>
+    <script src="<% Response.Write(rootPath());%>Content/js/custom.js"></script>
+    <!-- end: JavaScript-->
+</asp:Content>
