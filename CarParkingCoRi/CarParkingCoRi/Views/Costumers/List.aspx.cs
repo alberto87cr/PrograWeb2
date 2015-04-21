@@ -1,4 +1,5 @@
-﻿using CarParkingCoRi.Model;
+﻿using CarParkingCoRi.BLL;
+using CarParkingCoRi.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,16 +15,15 @@ namespace CarParkingCoRi.Views.Costumers
         {
             listadoClientes.Text = "";
             String listadoFinal = "";
-            List<Cliente> listado = null;
+            List<Cliente> listado = ClienteBLL.obtenerTodosCliente();
             foreach (Cliente client in listado)
             {
-                String tipoServicio = "Mensual";
                 String fechaPago = "01-mayo-2015";
                 listadoFinal +=
                     "<tr>" +
                         "<td>" + client.nombre + " " + client.apellido1 + " " + client.apellido2 + "</td>" +
                         "<td class='center'>" + client.cedula + "</td>" +
-                        "<td class='center'>" + tipoServicio + "</td>" +
+                        "<td class='center'>" + client.tipoServicio + "</td>" +
                         "<td class='center'>" + fechaPago + "</td>" +
                         "<td class='center'>";
                 if (true)
