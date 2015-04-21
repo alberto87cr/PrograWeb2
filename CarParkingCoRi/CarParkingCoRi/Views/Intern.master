@@ -160,6 +160,34 @@
                         <!-- start: Vehicles Options -->
                         <li>
                             <a class="dropmenu" href="#">
+                                <i class="icon-barcode"></i>
+                                <span class="hidden-tablet">Control de Parqueo</span>
+                            </a>
+                            <ul>
+                                <li>
+                                    <a class="submenu" href="<% Response.Write(VehiclesPath() + ListPath());%>">
+                                        <i class="icon-list-alt"></i>
+                                        <span class="hidden-tablet">Listado Actual</span>
+                                    </a>
+                                    <a class="submenu" href="<% Response.Write(VehiclesPath() + AddPath());%>">
+                                        <i class="icon-arrow-right"></i>
+                                        <span class="hidden-tablet">Ingreso de Vehiculo</span>
+                                    </a>
+                                    <a class="submenu" href="<% Response.Write(VehiclesPath() + UpdatePath());%>">
+                                        <i class="icon-arrow-left"></i>
+                                        <span class="hidden-tablet">Retiro de Vehiculo</span>
+                                    </a>
+                                    <a class="submenu" href="<% Response.Write(VehiclesPath() + DeletePath());%>">
+                                        <i class="icon-zoom-in"></i>
+                                        <span class="hidden-tablet">Consultar Vehiculo</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <!-- end: Vehicles Options -->
+                        <!-- start: Vehicles Options -->
+                        <li>
+                            <a class="dropmenu" href="#">
                                 <i class="icon-dashboard"></i>
                                 <span class="hidden-tablet">Control de Vehiculos</span>
                             </a>
@@ -167,19 +195,19 @@
                                 <li>
                                     <a class="submenu" href="<% Response.Write(VehiclesPath() + ListPath());%>">
                                         <i class="icon-list-alt"></i>
-                                        <span class="hidden-tablet">Lista Actual</span>
+                                        <span class="hidden-tablet">Listado Actual</span>
                                     </a>
                                     <a class="submenu" href="<% Response.Write(VehiclesPath() + AddPath());%>">
-                                        <i class="icon-arrow-right"></i>
-                                        <span class="hidden-tablet">Ingreso de Vehiculo</span>
-                                    </a>
-                                    <a class="submenu" href="<% Response.Write(VehiclesPath() + DeletePath());%>">
-                                        <i class="icon-arrow-left"></i>
-                                        <span class="hidden-tablet">Salida de Vehiculo</span>
+                                        <i class="icon-Pencil"></i>
+                                        <span class="hidden-tablet">Registro de Vehiculo</span>
                                     </a>
                                     <a class="submenu" href="<% Response.Write(VehiclesPath() + UpdatePath());%>">
                                         <i class="icon-edit"></i>
                                         <span class="hidden-tablet">Modificar Vehiculo</span>
+                                    </a>
+                                    <a class="submenu" href="<% Response.Write(VehiclesPath() + DeletePath());%>">
+                                        <i class="icon-trash"></i>
+                                        <span class="hidden-tablet">Eliminar Vehiculo</span>
                                     </a>
                                 </li>
                             </ul>
@@ -189,25 +217,25 @@
                         <li>
                             <a class="dropmenu" href="#">
                                 <i class="icon-user"></i>
-                                <span class="hidden-tablet">Clientes</span>
+                                <span class="hidden-tablet">Control de Clientes</span>
                             </a>
                             <ul>
                                 <li>
                                     <a class="submenu" href="<% Response.Write(CustomersPath() + ListPath());%>">
                                         <i class="icon-list-alt"></i>
-                                        <span class="hidden-tablet">Listado</span>
+                                        <span class="hidden-tablet">Listado de Clientes</span>
                                     </a>
                                     <a class="submenu" href="<% Response.Write(CustomersPath() + AddPath());%>">
                                         <i class="icon-pencil"></i>
-                                        <span class="hidden-tablet">Agregar</span>
-                                    </a>
-                                    <a class="submenu" href="<% Response.Write(CustomersPath() + DeletePath());%>">
-                                        <i class="icon-trash"></i>
-                                        <span class="hidden-tablet">Borrar</span>
+                                        <span class="hidden-tablet">Agregar Cliente</span>
                                     </a>
                                     <a class="submenu" href="<% Response.Write(CustomersPath() + UpdatePath());%>">
                                         <i class="icon-edit"></i>
-                                        <span class="hidden-tablet">Actualizar</span>
+                                        <span class="hidden-tablet">Actualizar Cliente</span>
+                                    </a>
+                                    <a class="submenu" href="<% Response.Write(CustomersPath() + DeletePath());%>">
+                                        <i class="icon-trash"></i>
+                                        <span class="hidden-tablet">Borrar Cliente</span>
                                     </a>
                                 </li>
                             </ul>
@@ -245,7 +273,7 @@
                         <li>
                             <a class="dropmenu" href="#">
                                 <i class="icon-wrench"></i>
-                                <span class="hidden-tablet">Ajustes de Sistema</span>
+                                <span class="hidden-tablet">Adicionales</span>
                             </a>
                             <ul>
                                 <li>
@@ -258,12 +286,16 @@
                                         <span class="hidden-tablet">Cierre de Caja</span>
                                     </a>
                                     <a class="submenu" href="<% Response.Write(UsersPath() + DeletePath());%>">
-                                        <i class="icon-bell"></i>
+                                        <i class="icon-refresh"></i>
                                         <span class="hidden-archive">Cambio de Turno</span>
                                     </a>
                                     <a class="submenu" href="<% Response.Write(UsersPath() + UpdatePath());%>">
                                         <i class="icon-road"></i>
                                         <span class="hidden-tablet">Datos de los espacios</span>
+                                    </a>
+                                    <a class="submenu" href="<% Response.Write(CustomersPath() + ListPath());%>">
+                                        <i class="icon-ticket"></i>
+                                        <span class="hidden-tablet">Generar Factura</span>
                                     </a>
                                 </li>
                             </ul>

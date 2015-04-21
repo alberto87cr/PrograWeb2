@@ -14,19 +14,24 @@
             <li><a href="#">Index</a></li>
         </ul>
         <div class="row-fluid">
+            <a class="quick-button metro green span2">
+                <i class="icon-barcode"></i>
+                <p>Control de Parqueo</p>
+                <span class="badge">10</span>
+            </a>
             <a class="quick-button metro yellow span2">
                 <i class="icon-dashboard"></i>
-                <p>Vehiculos</p>
-                <span class="badge">10</span>
+                <p>Control de Vehiculos</p>
+                <span class="badge">32</span>
             </a>
             <a class="quick-button metro blue span2">
                 <i class="icon-user"></i>
-                <p>Clientes</p>
+                <p>Control de Clientes</p>
                 <span class="badge">25</span>
             </a>
             <a class="quick-button metro red span2">
                 <i class="icon-group"></i>
-                <p>Usuarios</p>
+                <p>Control de Usuarios</p>
                 <span class="badge">3</span>
             </a>
             <a class="quick-button metro pink span2">

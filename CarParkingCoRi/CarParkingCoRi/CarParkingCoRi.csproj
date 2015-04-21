@@ -340,7 +340,13 @@
     <Content Include="Default.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
+    <Content Include="Views\Costumers\Add.aspx" />
+    <Content Include="Views\Costumers\Delete.aspx" />
+    <Content Include="Views\Costumers\Index.aspx" />
+    <Content Include="Views\Costumers\List.aspx" />
+    <Content Include="Views\Costumers\Update.aspx" />
     <Content Include="Views\Home\Index.aspx" />
+    <Content Include="Views\Vehicles\Index.aspx" />
     <Content Include="Web.config" />
     <Content Include="Views\Intern.master" />
     <Content Include="Views\Home\Home.master" />
@@ -394,7 +400,11 @@
     <Compile Include="Account\RegisterExternalLogin.aspx.designer.cs">
       <DependentUpon>RegisterExternalLogin.aspx</DependentUpon>
     </Compile>
+    <Compile Include="BLL\TarifaBLL.cs" />
+    <Compile Include="Class\configs.cs" />
     <Compile Include="Class\functions.cs" />
+    <Compile Include="Conexiones\Persistencia\DataBase.cs" />
+    <Compile Include="Conexiones\Persistencia\DatabaseFactory.cs" />
     <Compile Include="Contact.aspx.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -402,6 +412,7 @@
     <Compile Include="Contact.aspx.designer.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
     </Compile>
+    <Compile Include="DAL\TarifaDAL.cs" />
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -426,12 +437,47 @@
     <Compile Include="Site.Master.designer.cs">
       <DependentUpon>Site.Master</DependentUpon>
     </Compile>
+    <Compile Include="Views\Costumers\Add.aspx.cs">
+      <DependentUpon>Add.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Costumers\Add.aspx.designer.cs">
+      <DependentUpon>Add.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Views\Costumers\Costumers.master.cs">
       <DependentUpon>Costumers.master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Views\Costumers\Costumers.master.designer.cs">
       <DependentUpon>Costumers.master</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Costumers\Delete.aspx.cs">
+      <DependentUpon>Delete.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Costumers\Delete.aspx.designer.cs">
+      <DependentUpon>Delete.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Costumers\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Costumers\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Costumers\List.aspx.cs">
+      <DependentUpon>List.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Costumers\List.aspx.designer.cs">
+      <DependentUpon>List.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Costumers\Update.aspx.cs">
+      <DependentUpon>Update.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Costumers\Update.aspx.designer.cs">
+      <DependentUpon>Update.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\Home\Home.master.cs">
       <DependentUpon>Home.master</DependentUpon>
@@ -474,6 +520,13 @@
     </Compile>
     <Compile Include="Views\Users\Users.master.designer.cs">
       <DependentUpon>Users.master</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Vehicles\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Vehicles\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\Vehicles\Vehicles.master.cs">
       <DependentUpon>Vehicles.master</DependentUpon>
