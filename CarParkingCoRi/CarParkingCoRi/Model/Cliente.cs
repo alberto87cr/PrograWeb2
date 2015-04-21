@@ -14,12 +14,12 @@ namespace CarParkingCoRi.Model
         public string apellido2 { get; set; }
         public string telefono { get; set; } 
         public string placa { get; set; }
-        public int  tipoServicio { get; set; }
-        public int estado { get; set; }
+        public string  tipoServicio { get; set; }
+        public bool estado { get; set; }
 
         public Cliente() { }
 
-        public Cliente(int id, string ced, string nom, string ape1, string ape2, string tel, string placa, int tipoServ, int est)
+        public Cliente(string ced, string nom, string ape1, string ape2, string tel, string placa, string tipoServ, bool est)
         {
             this.id = id;
             cedula = ced;

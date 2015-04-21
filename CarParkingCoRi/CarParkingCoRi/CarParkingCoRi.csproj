@@ -400,6 +400,7 @@
     <Compile Include="Account\RegisterExternalLogin.aspx.designer.cs">
       <DependentUpon>RegisterExternalLogin.aspx</DependentUpon>
     </Compile>
+    <Compile Include="BLL\ClienteBLL.cs" />
     <Compile Include="BLL\EspacioParqueoBLL.cs" />
     <Compile Include="BLL\TarifaBLL.cs" />
     <Compile Include="Class\configs.cs" />

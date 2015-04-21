@@ -35,8 +35,8 @@ namespace CarParkingCoRi.Class
         public configs()
         {
             userDB = "sa";
-            passDB = "hacp1687";
-            nameDB = "simsansa";
+            passDB = "ninacarolina1627_";
+            nameDB = "ParqueoDB";
             nameStringDB = "conectionServer";
             dateFormat = "yyyyMMdd HH:mm:ss";
         }
