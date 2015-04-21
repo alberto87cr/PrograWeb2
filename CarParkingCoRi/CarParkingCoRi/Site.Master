@@ -8,7 +8,7 @@
     <title><%: Page.Title %> - CoRi Car Parking System</title>
     <meta name="description" content="CoRi Car Parking System">
     <meta name="author" content="Andres Lizano">
-    <meta name="author" content="Oscar">
+    <meta name="author" content="Oscar Alvarado">
     <meta name="author" content="Alberto Castro">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <!-- end: Meta -->
@@ -45,18 +45,64 @@
 </head>
 <body>
     <form runat="server">
-        <asp:ScriptManager runat="server">
+        <%--     <asp:ScriptManager runat="server">
             <Scripts>
                 <asp:ScriptReference Name="jquery" />
                 <asp:ScriptReference Name="jquery.ui.combined" />
             </Scripts>
-        </asp:ScriptManager>
+        </asp:ScriptManager>--%>
+
+
+        <%--<LoggedInTemplate>
+                <asp:LoginName ID="LoginName1" runat="server" />
+                <asp:LoginStatus ID="LoginStatus1" runat="server" />
+
+
+
+
+                
+                <div id="body">
+                    <asp:ContentPlaceHolder runat="server" ID="Main" />
+                </div>
+            </LoggedInTemplate>
+        </asp:LoginView>--%>
         <asp:ContentPlaceHolder runat="server" ID="Header" />
         <div id="body">
             <asp:ContentPlaceHolder runat="server" ID="Main" />
         </div>
     </form>
     <asp:ContentPlaceHolder runat="server" ID="Footer" />
-
+    <!-- start: JavaScript-->
+    <script src="<% Response.Write(rootPath());%>Content/js/jquery-1.9.1.min.js"></script>
+    <script src="<% Response.Write(rootPath());%>Content/js/jquery-migrate-1.0.0.min.js"></script>
+    <script src="<% Response.Write(rootPath());%>Content/js/jquery-ui-1.10.0.custom.min.js"></script>
+    <script src="<% Response.Write(rootPath());%>Content/js/jquery.ui.touch-punch.js"></script>
+    <script src="<% Response.Write(rootPath());%>Content/js/modernizr.js"></script>
+    <script src="<% Response.Write(rootPath());%>Content/js/bootstrap.min.js"></script>
+    <script src="<% Response.Write(rootPath());%>Content/js/jquery.cookie.js"></script>
+    <script src='<% Response.Write(rootPath());%>Content/js/fullcalendar.min.js'></script>
+    <script src='<% Response.Write(rootPath());%>Content/js/jquery.dataTables.min.js'></script>
+    <script src="<% Response.Write(rootPath());%>Content/js/excanvas.js"></script>
+    <script src="<% Response.Write(rootPath());%>Content/js/jquery.flot.js"></script>
+    <script src="<% Response.Write(rootPath());%>Content/js/jquery.flot.pie.js"></script>
+    <script src="<% Response.Write(rootPath());%>Content/js/jquery.flot.stack.js"></script>
+    <script src="<% Response.Write(rootPath());%>Content/js/jquery.flot.resize.min.js"></script>
+    <script src="<% Response.Write(rootPath());%>Content/js/jquery.chosen.min.js"></script>
+    <script src="<% Response.Write(rootPath());%>Content/js/jquery.uniform.min.js"></script>
+    <script src="<% Response.Write(rootPath());%>Content/js/jquery.cleditor.min.js"></script>
+    <script src="<% Response.Write(rootPath());%>Content/js/jquery.noty.js"></script>
+    <script src="<% Response.Write(rootPath());%>Content/js/jquery.elfinder.min.js"></script>
+    <script src="<% Response.Write(rootPath());%>Content/js/jquery.raty.min.js"></script>
+    <script src="<% Response.Write(rootPath());%>Content/js/jquery.iphone.toggle.js"></script>
+    <script src="<% Response.Write(rootPath());%>Content/js/jquery.uploadify-3.1.min.js"></script>
+    <script src="<% Response.Write(rootPath());%>Content/js/jquery.gritter.min.js"></script>
+    <script src="<% Response.Write(rootPath());%>Content/js/jquery.imagesloaded.js"></script>
+    <script src="<% Response.Write(rootPath());%>Content/js/jquery.masonry.min.js"></script>
+    <script src="<% Response.Write(rootPath());%>Content/js/jquery.knob.modified.js"></script>
+    <script src="<% Response.Write(rootPath());%>Content/js/jquery.sparkline.min.js"></script>
+    <script src="<% Response.Write(rootPath());%>Content/js/counter.js"></script>
+    <script src="<% Response.Write(rootPath());%>Content/js/retina.js"></script>
+    <script src="<% Response.Write(rootPath());%>Content/js/custom.js"></script>
+    <!-- end: JavaScript-->
 </body>
 </html>

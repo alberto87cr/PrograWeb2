@@ -346,17 +346,24 @@
     <Content Include="Views\Costumers\List.aspx" />
     <Content Include="Views\Costumers\Update.aspx" />
     <Content Include="Views\Home\Index.aspx" />
+    <Content Include="Views\Login\Index.aspx" />
     <Content Include="Views\Vehicles\Index.aspx" />
     <Content Include="Web.config" />
     <Content Include="Views\Intern.master" />
     <Content Include="Views\Home\Home.master" />
-    <Content Include="Views\Login\Login.master" />
     <Content Include="Views\Users\Users.master" />
     <Content Include="Views\Vehicles\Vehicles.master" />
     <Content Include="Views\ParkingAreas\ParkingAreas.master" />
     <Content Include="Views\Costumers\Costumers.master" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Account\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
     <Compile Include="App_Start\AuthConfig.cs" />
     <Compile Include="About.aspx.cs">
       <DependentUpon>About.aspx</DependentUpon>
@@ -364,13 +371,6 @@
     </Compile>
     <Compile Include="About.aspx.designer.cs">
       <DependentUpon>About.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Account\Login.aspx.cs">
-      <DependentUpon>Login.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Account\Login.aspx.designer.cs">
-      <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="Account\Manage.aspx.cs">
       <DependentUpon>Manage.aspx</DependentUpon>
@@ -505,12 +505,12 @@
     <Compile Include="Views\Intern.master.designer.cs">
       <DependentUpon>Intern.master</DependentUpon>
     </Compile>
-    <Compile Include="Views\Login\Login.master.cs">
-      <DependentUpon>Login.master</DependentUpon>
+    <Compile Include="Views\Login\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Views\Login\Login.master.designer.cs">
-      <DependentUpon>Login.master</DependentUpon>
+    <Compile Include="Views\Login\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\ParkingAreas\ParkingAreas.master.cs">
       <DependentUpon>ParkingAreas.master</DependentUpon>
@@ -549,6 +549,7 @@
     <Content Include="Site.Master" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Views\Web.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

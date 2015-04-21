@@ -1,4 +1,6 @@
-﻿using System;
+﻿using CarParkingCoRi.BLL;
+using CarParkingCoRi.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,7 +13,41 @@ namespace CarParkingCoRi.Views.Costumers
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            listadoClientes.Text = "";
+            String listadoFinal = "";
+            List<Cliente> listado = ClienteBLL.obtenerTodosCliente();
+            foreach (Cliente client in listado)
+            {
+                String fechaPago = "01-mayo-2015";
+                listadoFinal +=
+                    "<tr>" +
+                        "<td>" + client.nombre + " " + client.apellido1 + " " + client.apellido2 + "</td>" +
+                        "<td class='center'>" + client.cedula + "</td>" +
+                        "<td class='center'>" + client.tipoServicio + "</td>" +
+                        "<td class='center'>" + fechaPago + "</td>" +
+                        "<td class='center'>";
+                if (true)
+                    listadoFinal +=
+                            "<span class='label label-success'>Activo</span>";
+                else
+                    listadoFinal +=
+                            "<span class='label label-important'>Inactivo</span>";
+                listadoFinal +=
+                        "</td>" +
+                        "<td class='center'>" +
+                            "<a class='btn btn-success' href='#'>" +
+                                "<i class='halflings-icon white zoom-in'></i>" +
+                            "</a>" +
+                            "<a class='btn btn-info' href='#'>" +
+                                "<i class='halflings-icon white edit'></i>" +
+                            "</a>" +
+                            "<a class='btn btn-danger' href='#'>" +
+                                "<i class='halflings-icon white trash'></i>" +
+                            "</a>" +
+                        "</td>" +
+                    "</tr>";
+            }
+            listadoClientes.Text = listadoFinal;
         }
     }
 }
