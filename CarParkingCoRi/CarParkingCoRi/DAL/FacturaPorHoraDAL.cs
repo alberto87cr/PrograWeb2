@@ -5,8 +5,7 @@ using System.Web;
 
 namespace CarParkingCoRi.DAL
 {
-    public class TarifaDAL
+    public class FacturaPorHoraDAL
     {
-
     }
 }

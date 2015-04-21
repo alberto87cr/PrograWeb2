@@ -400,6 +400,8 @@
     <Compile Include="Account\RegisterExternalLogin.aspx.designer.cs">
       <DependentUpon>RegisterExternalLogin.aspx</DependentUpon>
     </Compile>
+    <Compile Include="BLL\ClienteBLL.cs" />
+    <Compile Include="BLL\EspacioParqueoBLL.cs" />
     <Compile Include="BLL\TarifaBLL.cs" />
     <Compile Include="Class\configs.cs" />
     <Compile Include="Class\functions.cs" />
@@ -412,6 +414,9 @@
     <Compile Include="Contact.aspx.designer.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
     </Compile>
+    <Compile Include="DAL\ClienteDAL.cs" />
+    <Compile Include="DAL\EspacioParqueoDAL.cs" />
+    <Compile Include="DAL\FacturaPorHoraDAL.cs" />
     <Compile Include="DAL\TarifaDAL.cs" />
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>

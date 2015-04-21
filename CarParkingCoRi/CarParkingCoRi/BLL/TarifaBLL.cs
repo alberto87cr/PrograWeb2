@@ -17,7 +17,7 @@ namespace CarParkingCoRi.BLL
             try
             {
                 DataSet ds = new DataSet();
-                ds = TarifaDAL.getRate(tipoTarifa, monto);
+                //ds = TarifaDAL.getRate(tipoTarifa, monto);
                 return ds;
             }
             catch (Exception err)

@@ -19,7 +19,7 @@ namespace CarParkingCoRi.Conexiones.Persistencia
             try
             {
                 pSqlCommand.Connection = Conexion;
-                lector = pSqlCommand.ExecuteReader(CommandBehavior.CloseConnection);
+                lector = pSqlCommand.ExecuteReader();
                 return lector;
             }
             catch (Exception error)

@@ -42,7 +42,7 @@ namespace CarParkingCoRi.Conexiones.Persistencia
             {
                 DataBase db = new DataBase();
                 SqlConnection conexion = new SqlConnection();
-                conexion.ConnectionString = ConfigurationManager.ConnectionStrings["conectionCompaq"].ConnectionString;
+                conexion.ConnectionString = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
                 conexion.Open();
                 db.Conexion = conexion;
                 if (conexion.State != ConnectionState.Open)
@@ -69,7 +69,7 @@ namespace CarParkingCoRi.Conexiones.Persistencia
         private static void log(String pMetodo, String pMensaje)
         {
             String fecha = DateTime.Now.Day.ToString() + "-" + DateTime.Now.Month.ToString() + "-" + DateTime.Now.Year.ToString() + " Hora " + DateTime.Now.Hour.ToString() + ":" + DateTime.Now.Minute.ToString() + ":" + DateTime.Now.Second.ToString();
-            String archivo = "C:\\simsansa\\Error_Conexion_Base_Datos " + DateTime.Now.Day.ToString() + "-" + DateTime.Now.Month.ToString() + "-" + DateTime.Now.Year.ToString() + ".txt";
+            String archivo = "C:\\ErrorDB " + DateTime.Now.Day.ToString() + "-" + DateTime.Now.Month.ToString() + "-" + DateTime.Now.Year.ToString() + ".txt";
             if (System.IO.File.Exists(@archivo) == false)
             {
                 System.IO.StreamWriter file = new System.IO.StreamWriter(@archivo);
@@ -104,7 +104,7 @@ namespace CarParkingCoRi.Conexiones.Persistencia
         private void log(String pMetodo, Exception error)
         {
             String fecha = DateTime.Now.Day.ToString() + "-" + DateTime.Now.Month.ToString() + "-" + DateTime.Now.Year.ToString() + " Hora " + DateTime.Now.Hour.ToString() + ":" + DateTime.Now.Minute.ToString() + ":" + DateTime.Now.Second.ToString();
-            String archivo = "C:\\simsansa\\Error_Conexion_Base_Datos" + DateTime.Now.Day.ToString() + "-" + DateTime.Now.Month.ToString() + "-" + DateTime.Now.Year.ToString() + ".txt";
+            String archivo = "C:\\ErrorDB" + DateTime.Now.Day.ToString() + "-" + DateTime.Now.Month.ToString() + "-" + DateTime.Now.Year.ToString() + ".txt";
             try
             {
                 if (System.IO.File.Exists(@archivo) == false)
