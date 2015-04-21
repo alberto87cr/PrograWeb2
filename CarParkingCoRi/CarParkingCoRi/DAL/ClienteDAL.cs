@@ -73,8 +73,8 @@ namespace CarParkingCoRi.DAL
                 configs cf = configs.getInstance();
                 string dateFormat = cf.getNameStringDB();
                 SqlCommand command = new SqlCommand();
-                command.CommandText = "Select c.id ,c.cedula, c.nombre, c.apellido1, c.apellido2, c.telefono, c.placa, t.descripcion, c.estado" +
-                " from Clientes c inner join TipoServicio t on c.tipoServicio=t.id";
+                command.CommandText = "Select c.id ,c.cedula, c.nombre, c.apellido1, c.apellido2, c.telefono, c.placa, c.tipoServicio, c.estado" +
+                " from Clientes";
                 command.CommandType = CommandType.Text;
                 string userDB = cf.getUserDB();
                 string passDB = cf.getPassDB();
