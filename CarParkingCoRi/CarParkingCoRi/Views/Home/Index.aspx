@@ -17,28 +17,25 @@
             <a class="quick-button metro green span2">
                 <i class="icon-barcode"></i>
                 <p>Control de Parqueo</p>
-                <span class="badge">10</span>
             </a>
-            <a class="quick-button metro yellow span2">
+            <%--<a class="quick-button metro yellow span2">
                 <i class="icon-dashboard"></i>
                 <p>Control de Vehiculos</p>
-                <span class="badge">32</span>
-            </a>
+            </a>--%>
             <a class="quick-button metro blue span2">
                 <i class="icon-user"></i>
                 <p>Control de Clientes</p>
-                <span class="badge">25</span>
             </a>
+            <% if(Roles.IsUserInRole("Admin")) { %>
             <a class="quick-button metro red span2">
                 <i class="icon-group"></i>
                 <p>Control de Usuarios</p>
-                <span class="badge">3</span>
             </a>
             <a class="quick-button metro pink span2">
                 <i class="icon-wrench"></i>
-                <p>Ajustes</p>
-                <span class="badge">88</span>
+                <p>Parametros</p>
             </a>
+            <% } %>
 
             <div class="clearfix"></div>
 

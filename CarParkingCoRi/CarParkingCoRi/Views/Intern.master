@@ -14,7 +14,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </a>
-                    <a class="brand" href="index.html"><span>CoRi Car Parking System</span></a>
+                    <a class="brand" href="<% Response.Write(HomePath() + IndexPath());%>"><span>CoRi Car Parking System</span></a>
 
                     <!-- start: Header Menu -->
                     <div class="nav-no-collapse header-nav">
@@ -56,7 +56,7 @@
                                                 <span class="title">Porcentaje General en Uso</span>
                                                 <span class="percent"></span>
                                             </span>
-                                            <div class="taskProgress progressSlim red">80</div>
+                                            <div class="taskProgress progressSlim red"><% Response.Write(getPorGenUse());%></div>
                                         </a>
                                     </li>
                                     <li>
@@ -65,7 +65,7 @@
                                                 <span class="title">Porcentaje Reservado en Uso</span>
                                                 <span class="percent"></span>
                                             </span>
-                                            <div class="taskProgress progressSlim green">20</div>
+                                            <div class="taskProgress progressSlim green"><% Response.Write(getPorResUse());%></div>
                                         </a>
                                     </li>
                                     <li>
@@ -74,7 +74,7 @@
                                                 <span class="title">Porcentaje Publico en Uso</span>
                                                 <span class="percent"></span>
                                             </span>
-                                            <div class="taskProgress progressSlim yellow">60</div>
+                                            <div class="taskProgress progressSlim yellow"><% Response.Write(getPubUse());%></div>
                                         </a>
                                     </li>
                                 </ul>
@@ -87,10 +87,11 @@
                                 </a>
                                 <ul class="dropdown-menu messages">
                                     <li class="dropdown-menu-title">
-                                        <span>Usted tiene 1 mensaje nuevo</span>
+                                        <%--<span>Usted tiene 1 mensaje nuevo</span>--%>
+                                        <span>Usted no tiene mensajes</span>
                                         <a href="#refresh"><i class="icon-repeat"></i></a>
                                     </li>
-                                    <li>
+                                    <%--<li>
                                         <a href="#">
                                             <span class="avatar">
                                                 <img src="<% Response.Write(rootPath());%>Content/img/avatar.jpg" alt="Avatar"></span>
@@ -103,30 +104,32 @@
                                             <span class="message">Reportar cierre de caja de ayer
                                             </span>
                                         </a>
-                                    </li>
+                                    </li>--%>
                                     <li>
                                         <a class="dropdown-menu-sub-footer">Ver todos los mensajes</a>
                                     </li>
                                 </ul>
                             </li>
                             <!-- end: Message Dropdown -->
-                            <li>
+                            <%--<li>
                                 <a class="btn" href="#">
                                     <i class="halflings-icon white wrench"></i>
                                 </a>
-                            </li>
+                            </li>--%>
                             <!-- start: User Dropdown -->
                             <li class="dropdown">
                                 <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
-                                    <i class="halflings-icon white user"></i>Alberto Castro
+                                    <i class="halflings-icon white user"></i><% Response.Write(userName());%>
 								    <span class="caret"></span>
                                 </a>
                                 <ul class="dropdown-menu">
                                     <li class="dropdown-menu-title">
                                         <span>Configuracion</span>
                                     </li>
-                                    <li><a href="#"><i class="halflings-icon user"></i>Perfil</a></li>
-                                    <li><a href="login.html"><i class="halflings-icon off"></i>Cerrar Seccion</a></li>
+                                    <%--<li><a href="#"><i class="halflings-icon user"></i>Perfil</a></li>--%>
+                                    <li><i class="halflings-icon off"></i>
+                                        <asp:LoginStatus ID="LoginStatus1" runat="server" />
+                                    </li>
                                 </ul>
                             </li>
                             <!-- end: User Dropdown -->
@@ -186,7 +189,7 @@
                         </li>
                         <!-- end: Vehicles Options -->
                         <!-- start: Vehicles Options -->
-                        <li>
+                       <%-- <li>
                             <a class="dropmenu" href="#">
                                 <i class="icon-dashboard"></i>
                                 <span class="hidden-tablet">Control de Vehiculos</span>
@@ -211,7 +214,7 @@
                                     </a>
                                 </li>
                             </ul>
-                        </li>
+                        </li>--%>
                         <!-- end: Vehicles Options -->
                         <!-- start: Customers Options -->
                         <li>
@@ -242,6 +245,7 @@
                         </li>
                         <!-- end: Customers Options -->
                         <!-- start: Users Option -->
+                        <% if( Roles.IsUserInRole("Admin") ){ %>
                         <li>
                             <a class="dropmenu" href="#">
                                 <i class="icon-group"></i>
@@ -268,6 +272,7 @@
                                 </li>
                             </ul>
                         </li>
+                        <% } %>
                         <!-- end: Users Option -->
                         <!-- start: Config Options -->
                         <li>
@@ -277,10 +282,12 @@
                             </a>
                             <ul>
                                 <li>
+                                    <% if( Roles.IsUserInRole("Admin") ){ %>
                                     <a class="submenu" href="<% Response.Write(UsersPath() + ListPath());%>">
                                         <i class="icon-list-alt"></i>
                                         <span class="hidden-tablet">Parametros</span>
                                     </a>
+                                    <% } %>
                                     <a class="submenu" href="<% Response.Write(UsersPath() + AddPath());%>">
                                         <i class="icon-money"></i>
                                         <span class="hidden-tablet">Cierre de Caja</span>
@@ -303,6 +310,7 @@
                         <!-- end: Config Options -->
                         <!-- start: Login Options -->
                         <li>
+                            <asp:Button ID="Button1" runat="server" Text="Button" OnClick="Button1_Click" />
                             <a href="login.html">
                                 <i class="icon-lock"></i>
                                 <span class="hidden-tablet">Cerrar Session</span>
@@ -348,36 +356,5 @@
         </p>
         <asp:ContentPlaceHolder runat="server" ID="FooterInternBottom" />
     </footer>
-    <!-- start: JavaScript-->
-    <script src="<% Response.Write(rootPath());%>Content/js/jquery-1.9.1.min.js"></script>
-    <script src="<% Response.Write(rootPath());%>Content/js/jquery-migrate-1.0.0.min.js"></script>
-    <script src="<% Response.Write(rootPath());%>Content/js/jquery-ui-1.10.0.custom.min.js"></script>
-    <script src="<% Response.Write(rootPath());%>Content/js/jquery.ui.touch-punch.js"></script>
-    <script src="<% Response.Write(rootPath());%>Content/js/modernizr.js"></script>
-    <script src="<% Response.Write(rootPath());%>Content/js/bootstrap.min.js"></script>
-    <script src="<% Response.Write(rootPath());%>Content/js/jquery.cookie.js"></script>
-    <script src='<% Response.Write(rootPath());%>Content/js/fullcalendar.min.js'></script>
-    <script src='<% Response.Write(rootPath());%>Content/js/jquery.dataTables.min.js'></script>
-    <script src="<% Response.Write(rootPath());%>Content/js/excanvas.js"></script>
-    <script src="<% Response.Write(rootPath());%>Content/js/jquery.flot.js"></script>
-    <script src="<% Response.Write(rootPath());%>Content/js/jquery.flot.pie.js"></script>
-    <script src="<% Response.Write(rootPath());%>Content/js/jquery.flot.stack.js"></script>
-    <script src="<% Response.Write(rootPath());%>Content/js/jquery.flot.resize.min.js"></script>
-    <script src="<% Response.Write(rootPath());%>Content/js/jquery.chosen.min.js"></script>
-    <script src="<% Response.Write(rootPath());%>Content/js/jquery.uniform.min.js"></script>
-    <script src="<% Response.Write(rootPath());%>Content/js/jquery.cleditor.min.js"></script>
-    <script src="<% Response.Write(rootPath());%>Content/js/jquery.noty.js"></script>
-    <script src="<% Response.Write(rootPath());%>Content/js/jquery.elfinder.min.js"></script>
-    <script src="<% Response.Write(rootPath());%>Content/js/jquery.raty.min.js"></script>
-    <script src="<% Response.Write(rootPath());%>Content/js/jquery.iphone.toggle.js"></script>
-    <script src="<% Response.Write(rootPath());%>Content/js/jquery.uploadify-3.1.min.js"></script>
-    <script src="<% Response.Write(rootPath());%>Content/js/jquery.gritter.min.js"></script>
-    <script src="<% Response.Write(rootPath());%>Content/js/jquery.imagesloaded.js"></script>
-    <script src="<% Response.Write(rootPath());%>Content/js/jquery.masonry.min.js"></script>
-    <script src="<% Response.Write(rootPath());%>Content/js/jquery.knob.modified.js"></script>
-    <script src="<% Response.Write(rootPath());%>Content/js/jquery.sparkline.min.js"></script>
-    <script src="<% Response.Write(rootPath());%>Content/js/counter.js"></script>
-    <script src="<% Response.Write(rootPath());%>Content/js/retina.js"></script>
-    <script src="<% Response.Write(rootPath());%>Content/js/custom.js"></script>
-    <!-- end: JavaScript-->
+    
 </asp:Content>

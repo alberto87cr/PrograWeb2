@@ -50,7 +50,9 @@ namespace CarParkingCoRi.Conexiones.Persistencia
                     throw new Exception("No se pudo abrir la Base de Datos, revise los parámetros de conexión! ");
                 }
                 return db;
-            } catch(SqlException sqlErr){
+            }
+            catch (SqlException sqlErr)
+            {
                 System.ArgumentException argEx = new System.ArgumentException("0x000035", sqlErr);
                 throw argEx;
             }
@@ -152,5 +154,4 @@ namespace CarParkingCoRi.Conexiones.Persistencia
 
     }
 
-    }
 }

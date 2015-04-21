@@ -1,5 +1,5 @@
 ﻿<%@ Page Language="C#" Title="Registrar un inicio de sesión externo" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="RegisterExternalLogin.aspx.cs" Inherits="CarParkingCoRi.Account.RegisterExternalLogin" %>
-<asp:Content ContentPlaceHolderID="MainContent" runat="server">
+<asp:Content ContentPlaceHolderID="Main" runat="server">
     <hgroup class="title">
         <h1>Registrar con su cuenta <%: ProviderDisplayName %></h1>
         <h2><%: ProviderUserName %>.</h2>

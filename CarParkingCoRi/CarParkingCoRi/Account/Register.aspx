@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="Registrarse" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Register.aspx.cs" Inherits="CarParkingCoRi.Account.Register" %>
 
-<asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="MainContent">
+<asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="Main">
     <hgroup class="title">
         <h1><%: Title %>.</h1>
         <h2>Use el formulario siguiente para crear una cuenta nueva.</h2>
